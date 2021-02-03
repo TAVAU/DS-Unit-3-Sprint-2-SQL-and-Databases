@@ -1,0 +1,4 @@
+"How was working with MongoDB different from working with PostgreSQL? What was easier, and what was harder?"
+
+mongodb: don't need to define all the fields of documents at the beginning, easy for future adding fields, find certain data could be complicated, need addinitional coding
+postgressql: define all the fields at the very beginning, once for all. Hard to know all the columns at the start of the project.
