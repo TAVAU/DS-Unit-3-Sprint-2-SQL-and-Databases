@@ -78,14 +78,13 @@ LEFT JOIN armory_item i ON i.item_id = inv.item_id
 character_items = sl_curs.execute(get_character_items).fetchall()
 pprint(character_items)
 
-
-# add weapons for characters
 for character_item in character_items:
     character_name = character_item[1]
     query = { 'name': character_name }
     newvalues = { "$push": { "items":  character_item[3]} }
     collection.update_one(query, newvalues)
 
+# add weapons for characters
 get_character_weapons = """
 SELECT 
   c.character_id
@@ -108,3 +107,5 @@ for character_weapon in character_weapons:
 
 pprint(collection.find_one({'name': 'At id recusandae expl'}))
 # collection.drop()
+
+
